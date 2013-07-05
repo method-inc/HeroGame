@@ -258,6 +258,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\endgate-0.1.0.d.ts" />
+    <Content Include="Scripts\endgate-0.1.0.js" />
+    <Content Include="Scripts\endgate-0.1.0.min.js" />
+    <Content Include="Scripts\endgate-0.1.0.min.js.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
@@ -282,6 +286,14 @@
     <Content Include="Scripts\hero-role.js" />
     <Content Include="Scripts\hero-user.js" />
     <Content Include="Scripts\hero.js" />
+    <Content Include="Views\Admin\_Layout.cshtml" />
+    <TypeScriptCompile Include="Scripts\HeroGame.ts" />
+    <Content Include="Scripts\HeroGame.js">
+      <DependentUpon>HeroGame.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\HeroGame.min.js">
+      <DependentUpon>HeroGame.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -631,6 +643,13 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="$(ProjectDir)\**\*.ts" />
+  </ItemGroup>
+  <Target Name="TypeScriptCompile" BeforeTargets="Build">
+    <Message Text="Compiling TypeScript files" />
+    <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; -target ES5 @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
