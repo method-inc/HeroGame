@@ -36,6 +36,11 @@ namespace HeroGame
 
             HeroConfig.Initialize(authorizationService);
 
+            _Seed(authorizationService);
+        }
+
+        private static void _Seed(IAbilityAuthorizationService authorizationService)
+        {
             Ability ability1 = new Ability("Ability1");
             Ability ability2 = new Ability("Ability2");
             Ability ability3 = new Ability("Ability3");

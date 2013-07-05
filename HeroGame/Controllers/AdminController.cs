@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace HeroGame.Controllers
 {
-    public class AbilityAdminController : Controller
+    public class AdminController : Controller
     {
         public ActionResult Index()
         {
