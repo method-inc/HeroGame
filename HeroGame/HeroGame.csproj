@@ -76,7 +76,7 @@
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Repositories">
-      <HintPath>..\packages\Repositories.0.0.1\lib\Repositories.dll</HintPath>
+      <HintPath>..\packages\Repositories.0.1.10\lib\Repositories.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -184,8 +184,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AbilityController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -286,6 +286,15 @@
     <Content Include="Scripts\hero-role.js" />
     <Content Include="Scripts\hero-user.js" />
     <Content Include="Scripts\hero.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\restangular.js" />
+    <Content Include="Templates\ability-create.html" />
+    <Content Include="Templates\ability-list.html" />
+    <Content Include="Templates\header.html" />
+    <Content Include="Templates\role-create.html" />
+    <Content Include="Templates\role-list.html" />
+    <Content Include="Templates\user-create.html" />
+    <Content Include="Templates\user-list.html" />
     <Content Include="Views\Admin\_Layout.cshtml" />
     <TypeScriptCompile Include="Scripts\HeroGame.ts" />
     <Content Include="Scripts\HeroGame.js">
@@ -596,17 +605,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
-    <Content Include="Scripts\lodash.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\restangular.js" />
-    <Content Include="Templates\ability-create.html" />
-    <Content Include="Templates\ability-list.html" />
-    <Content Include="Templates\header.html" />
-    <Content Include="Templates\role-create.html" />
-    <Content Include="Templates\role-list.html" />
-    <Content Include="Templates\user-create.html" />
-    <Content Include="Templates\user-list.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -666,7 +668,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>49267</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:63076/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
