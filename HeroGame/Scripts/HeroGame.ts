@@ -19,6 +19,8 @@ module HeroGame {
             this.Scene.Add(this._monkey.Sprite);
             this.Scene.Add(this._ground);
             this.Scene.Add(this._rock.Sprite);
+            this.CollisionManager.Monitor(this._monkey);
+            this.CollisionManager.Monitor(this._rock);
         }
 
         public Update(gameTime: eg.GameTime): void {

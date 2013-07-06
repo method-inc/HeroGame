@@ -259,7 +259,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\asciimonkey.png" />
+    <Content Include="Images\monkey.jpg" />
+    <Content Include="Images\rock.jpg" />
     <Content Include="Scripts\endgate-0.1.0.d.ts" />
     <Content Include="Scripts\endgate-0.1.0.js" />
     <Content Include="Scripts\endgate-0.1.0.min.js" />
@@ -297,8 +298,17 @@
     <Content Include="Scripts\Monkey.js">
       <DependentUpon>Monkey.ts</DependentUpon>
     </Content>
+    <Content Include="Scripts\Monkey.min.js">
+      <DependentUpon>Monkey.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\restangular.js" />
     <TypeScriptCompile Include="Scripts\Rock.ts" />
+    <Content Include="Scripts\Rock.js">
+      <DependentUpon>Rock.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Rock.min.js">
+      <DependentUpon>Rock.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\RockAnimation.js">
       <DependentUpon>Rock.ts</DependentUpon>
     </Content>
@@ -631,19 +641,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
