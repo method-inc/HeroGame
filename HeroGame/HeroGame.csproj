@@ -200,6 +200,7 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\herogame.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -287,7 +288,12 @@
     <Content Include="Scripts\hero-user.js" />
     <Content Include="Scripts\hero.js" />
     <Content Include="Scripts\lodash.js" />
+    <TypeScriptCompile Include="Scripts\Main.ts" />
+    <Content Include="Scripts\Main.js">
+      <DependentUpon>Main.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\restangular.js" />
+    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Templates\ability-create.html" />
     <Content Include="Templates\ability-list.html" />
     <Content Include="Templates\header.html" />

@@ -26,6 +26,10 @@ namespace HeroGame
             bundles.Add(new ScriptBundle("~/bundles/endgate").Include(
                         "~/Scripts/endgate-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/herogame").Include(
+                        "~/Scripts/HeroGame.js",
+                        "~/Scripts/Main.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -43,6 +47,8 @@ namespace HeroGame
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include("~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/herogame").Include("~/Content/herogame.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/herojs").Include(
                         "~/Scripts/angular.js",
