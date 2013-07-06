@@ -20,7 +20,7 @@ var HeroGame;
             this._scene.Add(newRock.Sprite);
             setTimeout(function () {
                 return _this.AddRock();
-            }, 3000);
+            }, 10000);
         };
 
         RockProvider.prototype.Update = function (gameTime) {

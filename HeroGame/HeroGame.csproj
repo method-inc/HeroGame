@@ -259,12 +259,14 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\monkey.jpg" />
-    <Content Include="Images\rock.jpg" />
+    <Content Include="Images\monkey.png" />
+    <Content Include="Images\rock.png" />
     <Content Include="Scripts\endgate-0.1.0.d.ts" />
     <Content Include="Scripts\endgate-0.1.0.js" />
     <Content Include="Scripts\endgate-0.1.0.min.js" />
-    <Content Include="Scripts\endgate-0.1.0.min.js.map" />
+    <Content Include="Scripts\endgate-0.1.0.min.js.map">
+      <DependentUpon>endgate-0.1.0.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
@@ -314,6 +316,9 @@
     </Content>
     <TypeScriptCompile Include="Scripts\RockProvider.ts" />
     <Content Include="Scripts\RockProvider.js">
+      <DependentUpon>RockProvider.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\RockProvider.min.js">
       <DependentUpon>RockProvider.ts</DependentUpon>
     </Content>
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />

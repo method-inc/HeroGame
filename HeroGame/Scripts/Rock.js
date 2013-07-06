@@ -11,9 +11,9 @@ var HeroGame;
         function Rock(startXPos, startYPos) {
             this._xPos = startXPos;
             this._yPos = startYPos;
-            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/rock.jpg", 47, 46));
+            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/rock.png", 47, 46));
             this.Sprite.ZIndex = 100;
-            this._movementSpeed = 50;
+            this._movementSpeed = 300;
             this._direction = -1;
             this._rotationSpeed = Math.PI / 4;
 

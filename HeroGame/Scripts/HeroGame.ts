@@ -7,23 +7,39 @@ module HeroGame {
         private _monkey: Monkey;
         private _rockProvider: RockProvider;
         private _ground: eg.Graphics.Line2d;
+        private _gameOver: boolean;
 
         constructor(canvas: HTMLCanvasElement) {
             super(canvas);
-            
-            this._monkey = new Monkey(50, 330);
+
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
+            this._monkey = new Monkey(50, 330, this.Scene);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
             this._ground.Color = "white";
+            this._gameOver = false;
 
             this.Scene.Add(this._monkey.Sprite);
             this.Scene.Add(this._ground);
             this.CollisionManager.Monitor(this._monkey);
+            this.CollisionManager.OnCollision.Bind(() => this.GameOver());
         }
 
         public Update(gameTime: eg.GameTime): void {
-            this._rockProvider.Update(gameTime);
+            if (!this._gameOver)
+                this._rockProvider.Update(gameTime);
+        }
+
+        public GameOver(): void {
+            this.CollisionManager.Unmonitor(this._monkey);
+            var gameOverText = new eg.Graphics.Text2d(this.Scene.DrawArea.width / 2, this.Scene.DrawArea.height / 2, "Game Over");
+            var fontSettings = new eg.Graphics.Assets.FontSettings();
+            gameOverText.FontSettings.FontFamily = eg.Graphics.Assets.FontFamily.Monospace;
+            gameOverText.FontSettings.FontSize = "60px";
+            gameOverText.Color = "white";
+
+            this.Scene.Add(gameOverText);
+            this._gameOver = true;
         }
     }
 }

@@ -3180,6 +3180,7 @@ var EndGate;
                     set: function (size) {
                         this._refreshCache = true;
                         this._cachedState["fontSize"] = size;
+                        this._BuildFont();
                     },
                     enumerable: true,
                     configurable: true
@@ -3192,6 +3193,7 @@ var EndGate;
                     set: function (family) {
                         this._refreshCache = true;
                         this._cachedState["fontFamily"] = family;
+                        this._BuildFont();
                     },
                     enumerable: true,
                     configurable: true

@@ -23,7 +23,7 @@ module HeroGame {
             this._collisionManager.Monitor(newRock);
             this._rocks.push(newRock);
             this._scene.Add(newRock.Sprite);
-            setTimeout(() => this.AddRock(), 3000);
+            setTimeout(() => this.AddRock(), 10000);
         }
 
         public Update(gameTime: eg.GameTime) {
