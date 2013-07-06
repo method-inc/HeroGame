@@ -25,7 +25,7 @@ module HeroGame {
             this.Sprite.ZIndex = 100;
             super(this.Sprite.GetDrawBounds());
 
-            this._movementController = new eg.MovementControllers.LinearMovementController([this.Sprite], this._movementSpeed, false, false);
+            this._movementController = new eg.MovementControllers.LinearMovementController(new Array<eg.IMoveable>(this.Bounds, this.Sprite), this._movementSpeed, false, false);
             this._inputController = new eg.InputControllers.DirectionalInputController(inputManager.Keyboard, (direction: string, startMoving: boolean) => {
                 if (direction === "Right" || direction === "Left") {
                     this._movementController.Move(direction, startMoving);
@@ -71,9 +71,11 @@ module HeroGame {
 
             if (this._jumpingUp) {
                 this.Sprite.Position.Y -= gameTime.Elapsed.Milliseconds * this._jumpingSpeed;
+                this.Bounds.Position.Y -= gameTime.Elapsed.Milliseconds * this._jumpingSpeed;
             }
             if (this._jumpingDown) {
                 this.Sprite.Position.Y += gameTime.Elapsed.Milliseconds * this._jumpingSpeed;
+                this.Bounds.Position.Y += gameTime.Elapsed.Milliseconds * this._jumpingSpeed;
             }
         }
     }
