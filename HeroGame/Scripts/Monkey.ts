@@ -21,7 +21,7 @@ module HeroGame {
             this._jumpingDown = false;
             this._movementSpeed = 100;
             this._jumpingSpeed = 100 / 1000;
-            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.jpg", 104, 91));
+            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
             super(this.Sprite.GetDrawBounds());
 
