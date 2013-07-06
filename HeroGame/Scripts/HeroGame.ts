@@ -12,12 +12,14 @@ module HeroGame {
             super(canvas);
             
             this._monkey = new Monkey(50, 330);
-            this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene);
+            this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
+            this._ground.Color = "white";
 
             this.Scene.Add(this._monkey.Sprite);
             this.Scene.Add(this._ground);
+            this.CollisionManager.Monitor(this._monkey);
         }
 
         public Update(gameTime: eg.GameTime): void {
