@@ -12,8 +12,8 @@ module HeroGame {
         constructor(canvas: HTMLCanvasElement) {
             super(canvas);
 
+            this._monkey = new Monkey(50, 330, this.Input);
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
-            this._monkey = new Monkey(50, 330, this.Scene);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
             this._ground.Color = "white";
@@ -26,8 +26,10 @@ module HeroGame {
         }
 
         public Update(gameTime: eg.GameTime): void {
-            if (!this._gameOver)
+            if (!this._gameOver) {
+                this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
+            }
         }
 
         public GameOver(): void {

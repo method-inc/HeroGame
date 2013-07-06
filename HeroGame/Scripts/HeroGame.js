@@ -12,8 +12,8 @@ var HeroGame;
             var _this = this;
             _super.call(this, canvas);
 
+            this._monkey = new HeroGame.Monkey(50, 330, this.Input);
             this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
-            this._monkey = new HeroGame.Monkey(50, 330, this.Scene);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
             this._ground.Color = "white";
@@ -27,8 +27,10 @@ var HeroGame;
             });
         }
         Game.prototype.Update = function (gameTime) {
-            if (!this._gameOver)
+            if (!this._gameOver) {
+                this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
+            }
         };
 
         Game.prototype.GameOver = function () {
