@@ -1,11 +1,6 @@
 ﻿body {
-    background-color: black;
+    background-color: white;
 }
 canvas {
-    background-color: black;
-    text-align: left;
-    width: 900px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: white;
 }

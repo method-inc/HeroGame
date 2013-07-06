@@ -10,11 +10,18 @@ var HeroGame;
         __extends(Game, _super);
         function Game(canvas) {
             _super.call(this, canvas);
-            this._circle = new eg.Graphics.Circle(100, 150, 40, "red");
-            this.Scene.Add(this._circle);
+
+            this._monkey = new HeroGame.Monkey(50, 330);
+            this._rock = new HeroGame.Rock(canvas.width - 75, 348);
+
+            this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
+
+            this.Scene.Add(this._monkey.Sprite);
+            this.Scene.Add(this._ground);
+            this.Scene.Add(this._rock.Sprite);
         }
         Game.prototype.Update = function (gameTime) {
-            this._circle.Position.X += gameTime.Elapsed.Seconds * 200;
+            this._rock.Roll(gameTime);
         };
         return Game;
     })(eg.Game);

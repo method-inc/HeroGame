@@ -259,6 +259,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\asciimonkey.png" />
     <Content Include="Scripts\endgate-0.1.0.d.ts" />
     <Content Include="Scripts\endgate-0.1.0.js" />
     <Content Include="Scripts\endgate-0.1.0.min.js" />
@@ -292,7 +293,15 @@
     <Content Include="Scripts\Main.js">
       <DependentUpon>Main.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Scripts\Monkey.ts" />
+    <Content Include="Scripts\Monkey.js">
+      <DependentUpon>Monkey.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\restangular.js" />
+    <TypeScriptCompile Include="Scripts\Rock.ts" />
+    <Content Include="Scripts\RockAnimation.js">
+      <DependentUpon>Rock.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Templates\ability-create.html" />
     <Content Include="Templates\ability-list.html" />

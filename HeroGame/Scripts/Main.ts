@@ -10,7 +10,7 @@
         game: HeroGame.Game = null;
 
     // Setup the game canvas DOM
-    canvas.width = 900;;
+    canvas.width = document.body.clientWidth;
     canvas.height = 400;
     holder.append(canvas);
 
