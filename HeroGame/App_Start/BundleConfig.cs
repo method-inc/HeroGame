@@ -29,6 +29,8 @@ namespace HeroGame
             bundles.Add(new ScriptBundle("~/bundles/herogame").Include(
                         "~/Scripts/Rock.js",
                         "~/Scripts/RockProvider.js",
+                        "~/Scripts/Cloud.js",
+                        "~/Scripts/CloudProvider.js",
                         "~/Scripts/Monkey.js",
                         "~/Scripts/HeroGame.js",
                         "~/Scripts/Main.js"));

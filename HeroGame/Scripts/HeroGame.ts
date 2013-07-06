@@ -1,11 +1,13 @@
 /// <reference path="endgate-0.1.0.d.ts" />
 /// <reference path="RockProvider.ts" />
+/// <reference path="CloudProvider.ts" />
 /// <reference path="Monkey.ts" />
 
 module HeroGame {
     export class Game extends eg.Game {
         private _monkey: Monkey;
         private _rockProvider: RockProvider;
+        private _cloudProvider: CloudProvider;
         private _ground: eg.Graphics.Line2d;
         private _gameOver: boolean;
 
@@ -14,7 +16,7 @@ module HeroGame {
 
             this._monkey = new Monkey(50, 330, this.Input);
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
-
+            this._cloudProvider = new CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
             this._ground.Color = "white";
             this._gameOver = false;
@@ -29,6 +31,7 @@ module HeroGame {
             if (!this._gameOver) {
                 this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
+                this._cloudProvider.Update(gameTime);
             }
         }
 

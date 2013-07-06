@@ -42,7 +42,6 @@ module HeroGame {
 
         public Collided(data: eg.Collision.Assets.CollisionData): void {
             if (!(data.With instanceof Monkey)) {
-                console.log("monkey collided");
                 super.Collided(data);
             }
         }

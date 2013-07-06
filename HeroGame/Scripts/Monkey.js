@@ -36,7 +36,6 @@ var HeroGame;
         }
         Monkey.prototype.Collided = function (data) {
             if (!(data.With instanceof Monkey)) {
-                console.log("monkey collided");
                 _super.prototype.Collided.call(this, data);
             }
         };
