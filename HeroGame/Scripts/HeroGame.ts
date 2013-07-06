@@ -15,6 +15,7 @@ module HeroGame {
             this._rock = new Rock(canvas.width-75, 348);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
+            this._ground.Color = "white";
 
             this.Scene.Add(this._monkey.Sprite);
             this.Scene.Add(this._ground);
