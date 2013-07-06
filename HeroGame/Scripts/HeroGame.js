@@ -12,16 +12,15 @@ var HeroGame;
             _super.call(this, canvas);
 
             this._monkey = new HeroGame.Monkey(50, 330);
-            this._rock = new HeroGame.Rock(canvas.width - 75, 348);
+            this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
 
             this.Scene.Add(this._monkey.Sprite);
             this.Scene.Add(this._ground);
-            this.Scene.Add(this._rock.Sprite);
         }
         Game.prototype.Update = function (gameTime) {
-            this._rock.Roll(gameTime);
+            this._rockProvider.Update(gameTime);
         };
         return Game;
     })(eg.Game);

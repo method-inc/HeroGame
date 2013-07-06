@@ -302,6 +302,10 @@
     <Content Include="Scripts\RockAnimation.js">
       <DependentUpon>Rock.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Scripts\RockProvider.ts" />
+    <Content Include="Scripts\RockProvider.js">
+      <DependentUpon>RockProvider.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Templates\ability-create.html" />
     <Content Include="Templates\ability-list.html" />
