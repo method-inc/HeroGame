@@ -38,7 +38,6 @@ module HeroGame {
         public GameOver(): void {
             this.CollisionManager.Unmonitor(this._monkey);
             var gameOverText = new eg.Graphics.Text2d(this.Scene.DrawArea.width / 2, this.Scene.DrawArea.height / 2, "Game Over");
-            var fontSettings = new eg.Graphics.Assets.FontSettings();
             gameOverText.FontSettings.FontFamily = eg.Graphics.Assets.FontFamily.Monospace;
             gameOverText.FontSettings.FontSize = "60px";
             gameOverText.Color = "white";
