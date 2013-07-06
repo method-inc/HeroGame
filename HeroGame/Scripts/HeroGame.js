@@ -11,7 +11,7 @@ var HeroGame;
         function Game(canvas) {
             _super.call(this, canvas);
 
-            this._monkey = new HeroGame.Monkey(50, 330);
+            this._monkey = new HeroGame.Monkey(50, 330, this.Input);
             this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
 
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
@@ -22,6 +22,7 @@ var HeroGame;
             this.CollisionManager.Monitor(this._monkey);
         }
         Game.prototype.Update = function (gameTime) {
+            this._monkey.Update(gameTime);
             this._rockProvider.Update(gameTime);
         };
         return Game;
