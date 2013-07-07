@@ -12,8 +12,9 @@ module HeroGame {
         private _jumpingDown: boolean;
         private _inputController: eg.InputControllers.DirectionalInputController;
         private _movementController: eg.MovementControllers.LinearMovementController;
+        private _eventHandler: eg.EventHandler;
 
-        constructor(startXPos: number, startYPos: number, inputManager: eg.Input.InputManager) {
+        constructor(startXPos: number, startYPos: number, inputManager: eg.Input.InputManager, eventHandler: eg.EventHandler) {
             this._xPos = startXPos;
             this._yPos = startYPos;
             this._shooting = false;
@@ -23,6 +24,7 @@ module HeroGame {
             this._jumpingSpeed = 100 / 1000;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
+            this._eventHandler = eventHandler;
             super(this.Sprite.GetDrawBounds());
 
             this._movementController = new eg.MovementControllers.LinearMovementController(new Array<eg.IMoveable>(this.Bounds, this.Sprite), this._movementSpeed, false, false);
@@ -57,7 +59,7 @@ module HeroGame {
 
         private Shoot() {
             if (!this._shooting) {
-                console.log("shooting bullet");
+                this._eventHandler.Trigger()
 
                 this._shooting = true;
                 //throttle bullets

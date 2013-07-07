@@ -8,7 +8,7 @@ var HeroGame;
 (function (HeroGame) {
     var Monkey = (function (_super) {
         __extends(Monkey, _super);
-        function Monkey(startXPos, startYPos, inputManager) {
+        function Monkey(startXPos, startYPos, inputManager, eventHandler) {
             var _this = this;
             this._xPos = startXPos;
             this._yPos = startYPos;
@@ -19,6 +19,7 @@ var HeroGame;
             this._jumpingSpeed = 100 / 1000;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
+            this._eventHandler = eventHandler;
             _super.call(this, this.Sprite.GetDrawBounds());
 
             this._movementController = new eg.MovementControllers.LinearMovementController(new Array(this.Bounds, this.Sprite), this._movementSpeed, false, false);
@@ -58,7 +59,7 @@ var HeroGame;
         Monkey.prototype.Shoot = function () {
             var _this = this;
             if (!this._shooting) {
-                console.log("shooting bullet");
+                this._eventHandler.Trigger();
 
                 this._shooting = true;
 

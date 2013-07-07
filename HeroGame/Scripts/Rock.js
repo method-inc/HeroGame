@@ -30,6 +30,8 @@ var HeroGame;
         Rock.prototype.Collided = function (data) {
             if (!(data.With instanceof Rock)) {
                 _super.prototype.Collided.call(this, data);
+                this.Dispose();
+                this.Sprite.Dispose();
             }
         };
         return Rock;

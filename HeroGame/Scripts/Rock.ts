@@ -33,6 +33,8 @@ module HeroGame {
         public Collided(data: eg.Collision.Assets.CollisionData): void {
             if (!(data.With instanceof Rock)) {
                 super.Collided(data);
+                this.Dispose();
+                this.Sprite.Dispose();
             }
         }
     }

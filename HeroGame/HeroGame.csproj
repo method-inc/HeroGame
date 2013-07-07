@@ -259,9 +259,17 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\banana.png" />
     <Content Include="Images\monkey.png" />
     <Content Include="Images\rock.png" />
     <TypeScriptCompile Include="Scripts\Cloud.ts" />
+    <TypeScriptCompile Include="Scripts\Bullet.ts" />
+    <Content Include="Scripts\Bullet.js">
+      <DependentUpon>Bullet.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Bullet.min.js">
+      <DependentUpon>Bullet.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\Cloud.js">
       <DependentUpon>Cloud.ts</DependentUpon>
     </Content>
@@ -274,6 +282,9 @@
     <Content Include="Scripts\endgate-0.1.0.min.js" />
     <Content Include="Scripts\endgate-0.1.0.min.js.map">
       <DependentUpon>endgate-0.1.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\HeroGame.min.js.map">
+      <DependentUpon>HeroGame.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
