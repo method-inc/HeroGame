@@ -11,15 +11,19 @@ module HeroGame {
         private _rockProvider: RockProvider;
         private _cloudProvider: CloudProvider;
         private _ground: eg.Graphics.Line2d;
+        private _shield: eg.Graphics.Line2d;
         private _gameOver: boolean;
         private _shootEventHandler: eg.EventHandler;
+        private _shieldEventHandler: eg.EventHandler;
 
         constructor(canvas: HTMLCanvasElement) {
             super(canvas);
 
             this._shootEventHandler = new eg.EventHandler();
             this._shootEventHandler.Bind(() => this.Shoot());
-            this._monkey = new Monkey(50, 330, this.Input, this._shootEventHandler);
+            this._shieldEventHandler = new eg.EventHandler();
+            this._shieldEventHandler.Bind(() => this.Shield());
+            this._monkey = new Monkey(50, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
             this._bulletProvider = new BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
@@ -46,6 +50,15 @@ module HeroGame {
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y + 10;
             this._bulletProvider.AddBullet(startX, startY);
+        }
+
+        public Shield(): void {
+            var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
+            var startY = this._monkey.Bounds.Position.Y;
+            this._shield = new eg.Graphics.Line2d(startX, startY - 50, startX, startY + this._monkey.Sprite.Size.Height - 20);
+            this._shield.Color = "white";
+            this.Scene.Add(this._shield);
+            setTimeout(() => this._shield.Dispose(), 1000);
         }
 
         public GameOver(first: eg.Collision.Collidable, second: eg.Collision.Collidable): void {

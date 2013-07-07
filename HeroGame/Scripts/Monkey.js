@@ -8,18 +8,20 @@ var HeroGame;
 (function (HeroGame) {
     var Monkey = (function (_super) {
         __extends(Monkey, _super);
-        function Monkey(startXPos, startYPos, inputManager, eventHandler) {
+        function Monkey(startXPos, startYPos, inputManager, shootingEventHandler, shieldEventHandler) {
             var _this = this;
             this._xPos = startXPos;
             this._yPos = startYPos;
             this._shooting = false;
+            this._shield = false;
             this._jumpingUp = false;
             this._jumpingDown = false;
             this._movementSpeed = 200;
             this._jumpingSpeed = 100 / 1000;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
-            this._eventHandler = eventHandler;
+            this._shootingEventHandler = shootingEventHandler;
+            this._shieldEventHandler = shieldEventHandler;
             _super.call(this, this.Sprite.GetDrawBounds());
 
             this._movementController = new eg.MovementControllers.LinearMovementController(new Array(this.Bounds, this.Sprite), this._movementSpeed, false, false);
@@ -28,6 +30,8 @@ var HeroGame;
                     _this._movementController.Move(direction, startMoving);
                 } else if (direction === "Up" && startMoving === true) {
                     _this.Jump();
+                } else if (direction === "Down") {
+                    _this.Shield();
                 }
             });
 
@@ -60,13 +64,26 @@ var HeroGame;
         Monkey.prototype.Shoot = function () {
             var _this = this;
             if (!this._shooting) {
-                this._eventHandler.Trigger();
+                this._shootingEventHandler.Trigger();
 
                 this._shooting = true;
 
                 setTimeout(function () {
                     return _this._shooting = false;
                 }, 1000);
+            }
+        };
+
+        Monkey.prototype.Shield = function () {
+            var _this = this;
+            if (!this._shield) {
+                this._shieldEventHandler.Trigger();
+
+                this._shield = true;
+
+                setTimeout(function () {
+                    return _this._shield = false;
+                }, 3000);
             }
         };
 

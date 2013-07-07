@@ -16,7 +16,11 @@ var HeroGame;
             this._shootEventHandler.Bind(function () {
                 return _this.Shoot();
             });
-            this._monkey = new HeroGame.Monkey(50, 330, this.Input, this._shootEventHandler);
+            this._shieldEventHandler = new eg.EventHandler();
+            this._shieldEventHandler.Bind(function () {
+                return _this.Shield();
+            });
+            this._monkey = new HeroGame.Monkey(50, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
             this._bulletProvider = new HeroGame.BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new HeroGame.CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
@@ -44,6 +48,18 @@ var HeroGame;
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y + 10;
             this._bulletProvider.AddBullet(startX, startY);
+        };
+
+        Game.prototype.Shield = function () {
+            var _this = this;
+            var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
+            var startY = this._monkey.Bounds.Position.Y;
+            this._shield = new eg.Graphics.Line2d(startX, startY - 50, startX, startY + this._monkey.Sprite.Size.Height - 20);
+            this._shield.Color = "white";
+            this.Scene.Add(this._shield);
+            setTimeout(function () {
+                return _this._shield.Dispose();
+            }, 1000);
         };
 
         Game.prototype.GameOver = function (first, second) {
