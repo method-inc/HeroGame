@@ -41,47 +41,39 @@ namespace HeroGame
 
         private static void _Seed(IAbilityAuthorizationService authorizationService)
         {
-            Ability ability1 = new Ability("Ability1");
-            Ability ability2 = new Ability("Ability2");
-            Ability ability3 = new Ability("Ability3");
-            Ability ability4 = new Ability("Ability4");
-            Ability ability5 = new Ability("Ability5");
+            Ability shieldAbility = new Ability("Shield");
+            Ability moveLeftAbility = new Ability("MoveLeft");
+            Ability moveRightAbility = new Ability("MoveRight");
+            Ability moveAbility = new Ability("Move");
+            moveAbility.Abilities.Add(moveLeftAbility);
+            moveAbility.Abilities.Add(moveRightAbility);
+            Ability jumpAbility = new Ability("Jump");
+            Ability shootAbility = new Ability("Shoot");
 
-            authorizationService.AddAbility(ability1);
-            authorizationService.AddAbility(ability2);
-            authorizationService.AddAbility(ability3);
-            authorizationService.AddAbility(ability4);
-            authorizationService.AddAbility(ability5);
+            authorizationService.AddAbility(shieldAbility);
+            authorizationService.AddAbility(moveLeftAbility);
+            authorizationService.AddAbility(moveRightAbility);
+            authorizationService.AddAbility(moveAbility);
+            authorizationService.AddAbility(jumpAbility);
+            authorizationService.AddAbility(shootAbility);
 
-            Role role1 = new Role("Role1");
-            Role role2 = new Role("Role2");
-            Role role3 = new Role("Role3");
-            Role role4 = new Role("Role4");
-            Role role5 = new Role("Role5");
+            Role amoeba = new Role("Amoeba");
+            Role dumbSlug = new Role("Dumb Slug");
+            Role scaredSlug = new Role("Scared Slug");
+            Role dodo = new Role("Dodo");
+            Role monkey = new Role("Monkey");
 
-            role1.Abilities.Add(ability1);
-            role1.Abilities.Add(ability2);
-            role2.Abilities.Add(ability1);
-            role3.Abilities.Add(ability3);
-            role3.Abilities.Add(ability4);
-            role3.Abilities.Add(ability5);
-            role5.Abilities.Add(ability5);
+            authorizationService.AddRole(amoeba);
+            authorizationService.AddRole(dumbSlug);
+            authorizationService.AddRole(scaredSlug);
+            authorizationService.AddRole(dodo);
+            authorizationService.AddRole(monkey);
 
-            authorizationService.AddRole(role1);
-            authorizationService.AddRole(role2);
-            authorizationService.AddRole(role3);
-            authorizationService.AddRole(role4);
-            authorizationService.AddRole(role5);
+            User user1 = new User("Hero");
 
-            User user1 = new User("User1");
-            User user2 = new User("User2");
-
-            user1.Roles.Add(role1);
-            user1.Roles.Add(role2);
-            user2.Roles.Add(role5);
+            user1.Roles.Add(amoeba);
 
             authorizationService.AddUser(user1);
-            authorizationService.AddUser(user2);
         }
     }
 }
