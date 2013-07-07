@@ -23,7 +23,7 @@ module HeroGame {
             this._shootEventHandler.Bind(() => this.Shoot());
             this._shieldEventHandler = new eg.EventHandler();
             this._shieldEventHandler.Bind(() => this.Shield());
-            this._monkey = new Monkey(50, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
+            this._monkey = new Monkey(canvas.width / 2, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
             this._bulletProvider = new BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);

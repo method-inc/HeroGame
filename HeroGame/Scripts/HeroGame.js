@@ -20,7 +20,7 @@ var HeroGame;
             this._shieldEventHandler.Bind(function () {
                 return _this.Shield();
             });
-            this._monkey = new HeroGame.Monkey(50, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
+            this._monkey = new HeroGame.Monkey(canvas.width / 2, 330, this.Input, this._shootEventHandler, this._shieldEventHandler);
             this._bulletProvider = new HeroGame.BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new HeroGame.CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
