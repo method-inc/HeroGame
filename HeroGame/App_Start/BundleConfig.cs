@@ -30,6 +30,7 @@ namespace HeroGame
                         "~/Scripts/Rock.js",
                         "~/Scripts/RockProvider.js",
                         "~/Scripts/Bullet.js",
+                        "~/Scripts/BulletProvider.js",
                         "~/Scripts/Cloud.js",
                         "~/Scripts/CloudProvider.js",
                         "~/Scripts/Monkey.js",

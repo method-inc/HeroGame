@@ -12,7 +12,8 @@ var HeroGame;
             this._xPos = startXPos;
             this._yPos = startYPos;
             this._movementSpeed = 300;
-            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/bullet.png", 16, 16));
+            this._rotationSpeed = Math.PI / 2;
+            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/banana.png", 32, 32));
             this.Sprite.ZIndex = 100;
             _super.call(this, this.Sprite.GetDrawBounds());
 
@@ -30,8 +31,11 @@ var HeroGame;
             this._movementController.Move("Right", true);
         };
 
-        Bullet.prototype.Update = function (gameTime) {
-            this._movementController.Update(gameTime);
+        Bullet.prototype.Roll = function (gameTime) {
+            var rotationIncrement = this._rotationSpeed * gameTime.Elapsed.Seconds;
+            var positionIncrement = this._movementSpeed * gameTime.Elapsed.Seconds;
+            this.Sprite.Rotation += rotationIncrement;
+            this.Sprite.Position.X += positionIncrement;
         };
         return Bullet;
     })(eg.Collision.Collidable);

@@ -270,6 +270,13 @@
     <Content Include="Scripts\Bullet.min.js">
       <DependentUpon>Bullet.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Scripts\BulletProvider.ts" />
+    <Content Include="Scripts\BulletProvider.js">
+      <DependentUpon>BulletProvider.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\BulletProvider.min.js">
+      <DependentUpon>BulletProvider.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\Cloud.js">
       <DependentUpon>Cloud.ts</DependentUpon>
     </Content>

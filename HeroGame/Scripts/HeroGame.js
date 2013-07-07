@@ -17,6 +17,7 @@ var HeroGame;
                 return _this.Shoot();
             });
             this._monkey = new HeroGame.Monkey(50, 330, this.Input, this._shootEventHandler);
+            this._bulletProvider = new HeroGame.BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new HeroGame.RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new HeroGame.CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
@@ -32,8 +33,7 @@ var HeroGame;
         }
         Game.prototype.Update = function (gameTime) {
             if (!this._gameOver) {
-                if (this._bullet)
-                    this._bullet.Update(gameTime);
+                this._bulletProvider.Update(gameTime);
                 this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
                 this._cloudProvider.Update(gameTime);
@@ -43,10 +43,7 @@ var HeroGame;
         Game.prototype.Shoot = function () {
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y + 10;
-            this._bullet = new HeroGame.Bullet(startX, startY);
-            this.CollisionManager.Monitor(this._bullet);
-            this.Scene.Add(this._bullet.Sprite);
-            this._bullet.Move();
+            this._bulletProvider.AddBullet(startX, startY);
         };
 
         Game.prototype.GameOver = function (first, second) {

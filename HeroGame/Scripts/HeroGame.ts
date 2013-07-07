@@ -2,12 +2,12 @@
 /// <reference path="RockProvider.ts" />
 /// <reference path="CloudProvider.ts" />
 /// <reference path="Monkey.ts" />
-/// <reference path="Bullet.ts" />
+/// <reference path="BulletProvider.ts" />
 
 module HeroGame {
     export class Game extends eg.Game {
         private _monkey: Monkey;
-        private _bullet: Bullet;
+        private _bulletProvider: BulletProvider;
         private _rockProvider: RockProvider;
         private _cloudProvider: CloudProvider;
         private _ground: eg.Graphics.Line2d;
@@ -20,6 +20,7 @@ module HeroGame {
             this._shootEventHandler = new eg.EventHandler();
             this._shootEventHandler.Bind(() => this.Shoot());
             this._monkey = new Monkey(50, 330, this.Input, this._shootEventHandler);
+            this._bulletProvider = new BulletProvider(this.Scene, this.CollisionManager);
             this._rockProvider = new RockProvider(canvas.width + 50, 348, this.Scene, this.CollisionManager);
             this._cloudProvider = new CloudProvider(canvas.width / 4, 100, 129, 97, this.Scene, this.Input);
             this._ground = new eg.Graphics.Line2d(0, 380, canvas.width, 380);
@@ -34,8 +35,7 @@ module HeroGame {
 
         public Update(gameTime: eg.GameTime): void {
             if (!this._gameOver) {
-                if (this._bullet)
-                    this._bullet.Update(gameTime);
+                this._bulletProvider.Update(gameTime);
                 this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
                 this._cloudProvider.Update(gameTime);
@@ -45,10 +45,7 @@ module HeroGame {
         public Shoot(): void {
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y + 10;
-            this._bullet = new Bullet(startX, startY); 
-            this.CollisionManager.Monitor(this._bullet);
-            this.Scene.Add(this._bullet.Sprite);
-            this._bullet.Move();
+            this._bulletProvider.AddBullet(startX, startY);
         }
 
         public GameOver(first: eg.Collision.Collidable, second: eg.Collision.Collidable): void {

@@ -5,6 +5,7 @@ module HeroGame {
         public Sprite: eg.Graphics.Sprite2d;
         private _xPos: number;
         private _yPos: number;
+        private _rotationSpeed: number;
         private _movementSpeed: number;
         private _movementController: eg.MovementControllers.LinearMovementController;
 
@@ -12,7 +13,8 @@ module HeroGame {
             this._xPos = startXPos;
             this._yPos = startYPos;
             this._movementSpeed = 300;
-            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/bullet.png", 16, 16));
+            this._rotationSpeed = Math.PI / 2;
+            this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/banana.png", 32, 32));
             this.Sprite.ZIndex = 100;
             super(this.Sprite.GetDrawBounds());
 
@@ -31,8 +33,11 @@ module HeroGame {
             this._movementController.Move("Right", true);
         }
 
-        public Update(gameTime: eg.GameTime) {
-            this._movementController.Update(gameTime);
+        public Roll(gameTime: eg.GameTime): void {
+            var rotationIncrement = this._rotationSpeed * gameTime.Elapsed.Seconds;
+            var positionIncrement = this._movementSpeed * gameTime.Elapsed.Seconds;
+            this.Sprite.Rotation += rotationIncrement;
+            this.Sprite.Position.X += positionIncrement;
         }
     }
 }
