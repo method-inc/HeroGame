@@ -11,7 +11,7 @@ var HeroGame;
         function Bullet(startXPos, startYPos) {
             this._xPos = startXPos;
             this._yPos = startYPos;
-            this._movementSpeed = 200;
+            this._movementSpeed = 300;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/bullet.png", 16, 16));
             this.Sprite.ZIndex = 100;
             _super.call(this, this.Sprite.GetDrawBounds());

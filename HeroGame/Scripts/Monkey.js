@@ -15,7 +15,7 @@ var HeroGame;
             this._shooting = false;
             this._jumpingUp = false;
             this._jumpingDown = false;
-            this._movementSpeed = 100;
+            this._movementSpeed = 200;
             this._jumpingSpeed = 100 / 1000;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
@@ -37,6 +37,7 @@ var HeroGame;
         }
         Monkey.prototype.Collided = function (data) {
             if (!(data.With instanceof Monkey)) {
+                this.Sprite.Rotation = -90;
                 _super.prototype.Collided.call(this, data);
             }
         };

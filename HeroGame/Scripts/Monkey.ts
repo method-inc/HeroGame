@@ -20,7 +20,7 @@ module HeroGame {
             this._shooting = false;
             this._jumpingUp = false;
             this._jumpingDown = false;
-            this._movementSpeed = 100;
+            this._movementSpeed = 200;
             this._jumpingSpeed = 100 / 1000;
             this.Sprite = new eg.Graphics.Sprite2d(startXPos, startYPos, new eg.Graphics.Assets.ImageSource("/Images/monkey.png", 104, 91));
             this.Sprite.ZIndex = 100;
@@ -44,6 +44,7 @@ module HeroGame {
 
         public Collided(data: eg.Collision.Assets.CollisionData): void {
             if (!(data.With instanceof Monkey)) {
+                this.Sprite.Rotation = -90;
                 super.Collided(data);
             }
         }
