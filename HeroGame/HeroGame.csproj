@@ -347,6 +347,13 @@
     <Content Include="Scripts\RockProvider.min.js">
       <DependentUpon>RockProvider.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Scripts\Shield.ts" />
+    <Content Include="Scripts\Shield.js">
+      <DependentUpon>Shield.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Shield.min.js">
+      <DependentUpon>Shield.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Templates\ability-create.html" />
     <Content Include="Templates\ability-list.html" />

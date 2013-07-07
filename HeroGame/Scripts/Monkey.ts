@@ -81,7 +81,7 @@ module HeroGame {
 
                 this._shield = true;
                 //throttle bullets
-                setTimeout(() => this._shield = false, 3000);
+                setTimeout(() => this._shield = false, 5000);
             }
         }
 

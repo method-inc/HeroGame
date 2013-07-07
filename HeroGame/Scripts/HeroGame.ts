@@ -3,6 +3,7 @@
 /// <reference path="CloudProvider.ts" />
 /// <reference path="Monkey.ts" />
 /// <reference path="BulletProvider.ts" />
+/// <reference path="Shield.ts" />
 
 module HeroGame {
     export class Game extends eg.Game {
@@ -11,7 +12,6 @@ module HeroGame {
         private _rockProvider: RockProvider;
         private _cloudProvider: CloudProvider;
         private _ground: eg.Graphics.Line2d;
-        private _shield: eg.Graphics.Line2d;
         private _gameOver: boolean;
         private _shootEventHandler: eg.EventHandler;
         private _shieldEventHandler: eg.EventHandler;
@@ -55,10 +55,10 @@ module HeroGame {
         public Shield(): void {
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y;
-            this._shield = new eg.Graphics.Line2d(startX, startY - 50, startX, startY + this._monkey.Sprite.Size.Height - 20);
-            this._shield.Color = "white";
-            this.Scene.Add(this._shield);
-            setTimeout(() => this._shield.Dispose(), 1000);
+            var shield = new Shield(startX, startY);
+            this.Scene.Add(shield.Sprite);
+            this.CollisionManager.Monitor(shield);
+            setTimeout(() => shield.Dispose(), 2000);
         }
 
         public GameOver(first: eg.Collision.Collidable, second: eg.Collision.Collidable): void {

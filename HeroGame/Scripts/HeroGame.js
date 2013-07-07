@@ -51,15 +51,14 @@ var HeroGame;
         };
 
         Game.prototype.Shield = function () {
-            var _this = this;
             var startX = this._monkey.Bounds.Position.X + this._monkey.Sprite.Size.Width + 10;
             var startY = this._monkey.Bounds.Position.Y;
-            this._shield = new eg.Graphics.Line2d(startX, startY - 50, startX, startY + this._monkey.Sprite.Size.Height - 20);
-            this._shield.Color = "white";
-            this.Scene.Add(this._shield);
+            var shield = new HeroGame.Shield(startX, startY);
+            this.Scene.Add(shield.Sprite);
+            this.CollisionManager.Monitor(shield);
             setTimeout(function () {
-                return _this._shield.Dispose();
-            }, 1000);
+                return shield.Dispose();
+            }, 2000);
         };
 
         Game.prototype.GameOver = function (first, second) {

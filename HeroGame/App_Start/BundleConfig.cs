@@ -27,6 +27,7 @@ namespace HeroGame
                         "~/Scripts/endgate-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/herogame").Include(
+                        "~/Scripts/Shield.js",
                         "~/Scripts/Rock.js",
                         "~/Scripts/RockProvider.js",
                         "~/Scripts/Bullet.js",

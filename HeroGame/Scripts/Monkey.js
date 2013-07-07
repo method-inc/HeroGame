@@ -83,7 +83,7 @@ var HeroGame;
 
                 setTimeout(function () {
                     return _this._shield = false;
-                }, 3000);
+                }, 5000);
             }
         };
 
