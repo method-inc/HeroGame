@@ -15,13 +15,20 @@ var HeroGame;
                 if (direction === "Right" || direction === "Left") {
                     var newDirection = "";
                     if (direction === "Right")
-                        newDirection = "Left";
+                        _this.MoveLeft(startMoving);
                     if (direction === "Left")
-                        newDirection = "Right";
-                    _this._movementController.Move(newDirection, startMoving);
+                        _this.MoveRight(startMoving);
                 }
             });
         }
+        Cloud.prototype.MoveLeft = function (startMoving) {
+            this._movementController.Move("Right", startMoving);
+        };
+
+        Cloud.prototype.MoveRight = function (startMoving) {
+            this._movementController.Move("Left", startMoving);
+        };
+
         Cloud.prototype.Update = function (gameTime) {
             this._movementController.Update(gameTime);
         };

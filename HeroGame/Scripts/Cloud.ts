@@ -22,12 +22,20 @@ module HeroGame {
                 if (direction === "Right" || direction === "Left") {
                     var newDirection = "";
                     if (direction === "Right")
-                        newDirection = "Left";
+                        this.MoveLeft(startMoving);
                     if (direction === "Left")
-                        newDirection = "Right";
-                    this._movementController.Move(newDirection, startMoving);
+                        this.MoveRight(startMoving);
+                    
                 }
             });
+        }
+
+        private MoveLeft(startMoving) {
+            this._movementController.Move("Right", startMoving);
+        }
+
+        private MoveRight(startMoving) {
+            this._movementController.Move("Left", startMoving);
         }
 
         public Update(gameTime: eg.GameTime) {
