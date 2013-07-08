@@ -33,10 +33,7 @@ module HeroGame {
 
             this._movementController = new eg.MovementControllers.LinearMovementController(new Array<eg.IMoveable>(this.Bounds, this.Sprite), this._movementSpeed, false, false);
             this._inputController = new eg.InputControllers.DirectionalInputController(inputManager.Keyboard, (direction: string, startMoving: boolean) => {
-                if (direction === "Right" || direction === "Left") {
-                    this._movementController.Move(direction, startMoving);
-                }
-                else if(direction === "Up" && startMoving === true){
+                if(direction === "Up" && startMoving === true){
                     this.Jump();
                 }
                 else if(direction === "Down"){
