@@ -10,7 +10,7 @@ namespace HeroGame
     {
         public IEnumerable<IAbility> GetCurrentUserAbilities()
         {
-            return HeroConfig.AuthorizationService.GetAbilitiesForUser(User.Identity.Name);
+            return HeroConfig.AuthorizationService.GetAbilitiesForUser("Hero");
         }
     }
 }

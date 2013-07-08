@@ -290,6 +290,7 @@
     <Content Include="Scripts\endgate-0.1.0.min.js.map">
       <DependentUpon>endgate-0.1.0.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\hero-game-init.js" />
     <Content Include="Scripts\HeroGame.min.js.map">
       <DependentUpon>HeroGame.js</DependentUpon>
     </Content>
