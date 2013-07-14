@@ -15,9 +15,9 @@ var HeroGame;
                 if (direction === "Right" || direction === "Left") {
                     var newDirection = "";
                     if (direction === "Right")
-                        _this.MoveLeft(startMoving);
-                    if (direction === "Left")
                         _this.MoveRight(startMoving);
+                    if (direction === "Left")
+                        _this.MoveLeft(startMoving);
                 }
             });
         }

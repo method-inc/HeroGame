@@ -281,6 +281,9 @@
       <DependentUpon>Cloud.ts</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Scripts\CloudProvider.ts" />
+    <Content Include="Scripts\Cloud.min.js">
+      <DependentUpon>Cloud.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\CloudProvider.js">
       <DependentUpon>CloudProvider.ts</DependentUpon>
     </Content>

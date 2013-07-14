@@ -22,9 +22,9 @@ module HeroGame {
                 if (direction === "Right" || direction === "Left") {
                     var newDirection = "";
                     if (direction === "Right")
-                        this.MoveLeft(startMoving);
-                    if (direction === "Left")
                         this.MoveRight(startMoving);
+                    if (direction === "Left")
+                        this.MoveLeft(startMoving);
                     
                 }
             });
