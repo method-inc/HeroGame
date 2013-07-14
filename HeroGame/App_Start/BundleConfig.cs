@@ -9,22 +9,22 @@ namespace HeroGame
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/vendor/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
+                        "~/Scripts/vendor/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/vendor/jquery.unobtrusive*",
+                        "~/Scripts/vendor/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/vendor/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/endgate").Include(
-                        "~/Scripts/endgate-{version}.js"));
+                        "~/Scripts/vendor/endgate-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/herogame").Include(
                         "~/Scripts/Shield.js",
@@ -59,15 +59,15 @@ namespace HeroGame
             bundles.Add(new StyleBundle("~/Content/herogame").Include("~/Content/herogame.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/herojs").Include(
-                        "~/Scripts/angular.js",
-                        "~/Scripts/angular-resource.js",
-                        "~/Scripts/lodash.js",
-                        "~/Scripts/restangular.js",
-                        "~/Scripts/hero.js",
-                        "~/Scripts/hero-user.js",
-                        "~/Scripts/hero-role.js",
-                        "~/Scripts/hero-ability.js",
-                        "~/Scripts/hero-authorization.js"));
+                        "~/Scripts/vendor/angular.js",
+                        "~/Scripts/vendor/angular-resource.js",
+                        "~/Scripts/vendor/lodash.js",
+                        "~/Scripts/vendor/restangular.js",
+                        "~/Scripts/hero/hero.js",
+                        "~/Scripts/hero/hero-user.js",
+                        "~/Scripts/hero/hero-role.js",
+                        "~/Scripts/hero/hero-ability.js",
+                        "~/Scripts/hero/hero-authorization.js"));
         }
     }
 }

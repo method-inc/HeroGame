@@ -287,41 +287,40 @@
     <Content Include="Scripts\CloudProvider.js">
       <DependentUpon>CloudProvider.ts</DependentUpon>
     </Content>
-    <Content Include="Scripts\endgate-0.1.0.d.ts" />
-    <Content Include="Scripts\endgate-0.1.0.js" />
-    <Content Include="Scripts\endgate-0.1.0.min.js" />
-    <Content Include="Scripts\endgate-0.1.0.min.js.map">
+    <Content Include="Scripts\vendor\endgate-0.1.0.js" />
+    <Content Include="Scripts\vendor\endgate-0.1.0.min.js" />
+    <Content Include="Scripts\vendor\endgate-0.1.0.min.js.map">
       <DependentUpon>endgate-0.1.0.js</DependentUpon>
     </Content>
     <Content Include="Scripts\hero-game-init.js" />
     <Content Include="Scripts\HeroGame.min.js.map">
       <DependentUpon>HeroGame.js</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\angular-bootstrap-prettify.js" />
-    <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
-    <Content Include="Scripts\angular-bootstrap.js" />
-    <Content Include="Scripts\angular-bootstrap.min.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
-    <Content Include="Scripts\angular-loader.js" />
-    <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular-sanitize.min.js" />
-    <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\hero-ability.js" />
-    <Content Include="Scripts\hero-authorization.js" />
-    <Content Include="Scripts\hero-role.js" />
-    <Content Include="Scripts\hero-user.js" />
-    <Content Include="Scripts\hero.js" />
-    <Content Include="Scripts\lodash.js" />
+    <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\vendor\angular-bootstrap-prettify.js" />
+    <Content Include="Scripts\vendor\angular-bootstrap-prettify.min.js" />
+    <Content Include="Scripts\vendor\angular-bootstrap.js" />
+    <Content Include="Scripts\vendor\angular-bootstrap.min.js" />
+    <Content Include="Scripts\vendor\angular-cookies.js" />
+    <Content Include="Scripts\vendor\angular-cookies.min.js" />
+    <Content Include="Scripts\vendor\angular-loader.js" />
+    <Content Include="Scripts\vendor\angular-loader.min.js" />
+    <Content Include="Scripts\vendor\angular-mocks.js" />
+    <Content Include="Scripts\vendor\angular-resource.js" />
+    <Content Include="Scripts\vendor\angular-resource.min.js" />
+    <Content Include="Scripts\vendor\angular-sanitize.js" />
+    <Content Include="Scripts\vendor\angular-sanitize.min.js" />
+    <Content Include="Scripts\vendor\angular-scenario.js" />
+    <Content Include="Scripts\vendor\angular.js" />
+    <Content Include="Scripts\vendor\angular.min.js" />
+    <Content Include="Scripts\vendor\bootstrap.js" />
+    <Content Include="Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Scripts\hero\hero-ability.js" />
+    <Content Include="Scripts\hero\hero-authorization.js" />
+    <Content Include="Scripts\hero\hero-role.js" />
+    <Content Include="Scripts\hero\hero-user.js" />
+    <Content Include="Scripts\hero\hero.js" />
+    <Content Include="Scripts\vendor\lodash.js" />
     <TypeScriptCompile Include="Scripts\Main.ts" />
     <Content Include="Scripts\Main.js">
       <DependentUpon>Main.ts</DependentUpon>
@@ -333,7 +332,7 @@
     <Content Include="Scripts\Monkey.min.js">
       <DependentUpon>Monkey.ts</DependentUpon>
     </Content>
-    <Content Include="Scripts\restangular.js" />
+    <Content Include="Scripts\vendor\restangular.js" />
     <TypeScriptCompile Include="Scripts\Rock.ts" />
     <Content Include="Scripts\Rock.js">
       <DependentUpon>Rock.ts</DependentUpon>
@@ -662,21 +661,21 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\init.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
+    <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\vendor\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\vendor\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\vendor\jquery.validate.js" />
+    <Content Include="Scripts\vendor\jquery.validate.min.js" />
+    <Content Include="Scripts\vendor\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\vendor\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\vendor\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\vendor\knockout-2.2.0.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -688,7 +687,7 @@
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Images\bullet.png" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\vendor\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -705,7 +704,18 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="$(ProjectDir)\**\*.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\typings\endgate\endgate-0.1.0.d.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Bullet.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\BulletProvider.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Cloud.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\CloudProvider.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\HeroGame.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Main.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Monkey.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Rock.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\RockProvider.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Shield.ts" />
+    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <Target Name="TypeScriptCompile" BeforeTargets="Build">
     <Message Text="Compiling TypeScript files" />

@@ -1,4 +1,4 @@
-/// <reference path="endgate-0.1.0.d.ts" />
+/// <reference path="typings/endgate/endgate-0.1.0.d.ts" />
 /// <reference path="Cloud.ts" />
 
 module HeroGame {
