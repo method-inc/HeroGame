@@ -268,6 +268,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\banana.png" />
+    <Content Include="Images\cloud.png" />
     <Content Include="Images\monkey.png" />
     <Content Include="Images\rock.png" />
     <TypeScriptCompile Include="Scripts\Cloud.ts" />
@@ -329,6 +330,8 @@
     <Content Include="Scripts\HeroGame.min.js.map">
       <DependentUpon>HeroGame.js</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\herogame - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\herogame - Web Deploy.pubxml" />
     <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
     <TypeScriptCompile Include="Scripts\Main.ts" />
     <Content Include="Scripts\Main.js">

@@ -41,32 +41,6 @@ namespace HeroGame
 
         private static void _Seed(IAbilityAuthorizationService authorizationService)
         {
-            _AddAbilities(authorizationService);
-            var amoeba = _AddRoles(authorizationService);
-
-            User hero = new User("Hero");
-            hero.Roles.Add(amoeba);
-
-            authorizationService.AddUser(hero);
-        }
-
-        private static Role _AddRoles(IAbilityAuthorizationService authorizationService)
-        {
-            Role amoeba = new Role("Amoeba");
-            Role dumbSlug = new Role("Dumb Slug");
-            Role scaredSlug = new Role("Scared Slug");
-            Role dodo = new Role("Dodo");
-            Role monkey = new Role("Monkey");
-            authorizationService.AddRole(amoeba);
-            authorizationService.AddRole(dumbSlug);
-            authorizationService.AddRole(scaredSlug);
-            authorizationService.AddRole(dodo);
-            authorizationService.AddRole(monkey);
-            return amoeba;
-        }
-
-        private static void _AddAbilities(IAbilityAuthorizationService authorizationService)
-        {
             Ability shieldAbility = new Ability("Shield");
             Ability moveLeftAbility = new Ability("MoveLeft");
             Ability moveRightAbility = new Ability("MoveRight");
@@ -81,6 +55,31 @@ namespace HeroGame
             authorizationService.AddAbility(moveAbility);
             authorizationService.AddAbility(jumpAbility);
             authorizationService.AddAbility(shootAbility);
+
+            Role amoeba = new Role("Amoeba");
+            Role dumbSlug = new Role("Dumb Slug");
+            Role scaredSlug = new Role("Scared Slug");
+            Role dodo = new Role("Dodo");
+            Role monkey = new Role("Monkey");
+            Role heroRole = new Role("Hero");
+            authorizationService.AddRole(amoeba);
+            authorizationService.AddRole(dumbSlug);
+            authorizationService.AddRole(scaredSlug);
+            authorizationService.AddRole(dodo);
+            authorizationService.AddRole(monkey);
+
+            heroRole.Abilities.Add(shieldAbility);
+            heroRole.Abilities.Add(moveLeftAbility);
+            heroRole.Abilities.Add(moveRightAbility);
+            heroRole.Abilities.Add(jumpAbility);
+            heroRole.Abilities.Add(shootAbility);
+
+            authorizationService.AddRole(heroRole);
+
+            User hero = new User("Hero");
+            hero.Roles.Add(heroRole);
+
+            authorizationService.AddUser(hero);
         }
     }
 }
