@@ -714,20 +714,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\typings\endgate\endgate-0.1.0.d.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Bullet.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\BulletProvider.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Cloud.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\CloudProvider.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\HeroGame.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Main.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Monkey.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Rock.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\RockProvider.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\Shield.ts" />
-    <TypeScriptCompile Include="C:\code\HeroGame\HeroGame\\Scripts\typings\jquery\jquery.d.ts" />
-  </ItemGroup>
   <Target Name="TypeScriptCompile" BeforeTargets="Build">
     <Message Text="Compiling TypeScript files" />
     <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; -target ES5 @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
