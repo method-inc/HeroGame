@@ -3,6 +3,7 @@ using System.Web.Http;
 using Hero; //do not remove
 using Hero.Configuration;
 using Hero.Interfaces;
+using HeroGame.Hubs;
 
 
 namespace HeroGame
@@ -26,7 +27,9 @@ namespace HeroGame
 
         public IUser Put([FromBody]User user)
         {
-            return HeroConfig.AuthorizationService.UpdateUser(user);
+            IUser temp = HeroConfig.AuthorizationService.UpdateUser(user);
+            AbilityBroadcaster.Instance.SendAbilities(HeroConfig.AuthorizationService.GetAbilitiesForUser(temp.Name));
+            return temp;
         }
 
         public void Delete(string id)

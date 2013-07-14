@@ -15,5 +15,5 @@
     holder.append(canvas);
 
     // Create our game
-    game = new HeroGame.Game(canvas);
+    window.GameInstance = new HeroGame.Game(canvas);
 })($, window);

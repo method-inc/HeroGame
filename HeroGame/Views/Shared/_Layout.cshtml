@@ -18,6 +18,8 @@
     @Scripts.Render("~/bundles/herojs")
     @Scripts.Render("~/bundles/endgate")
     @Scripts.Render("~/bundles/herogame")
+    @Scripts.Render("~/Scripts/vendor/jquery.signalR-1.1.2.js");
+    @Scripts.Render("/signalr/hubs");
     @Scripts.Render("~/Scripts/hero-game-init.js")
 
     @RenderSection("scripts", required: false)

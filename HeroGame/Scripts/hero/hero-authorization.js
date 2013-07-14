@@ -6,7 +6,17 @@
       userAbilities = items;
     });
   });
-  
+
+  hero.setupSignalRAddEvent = function(hub, callback) {
+    hub.client.sendAbility = function(abilityName) {
+      var foundAbility = _.find(userAbilities, function (item) { return item && item.name === abilityName; });
+      if (!foundAbility) {
+        userAbilities.push({ name: abilityName });
+        callback(abilityName);
+      }
+    };
+  };
+
   /**
       * The registration can take a true object or a function as the second paramter
       * If only an object and no function are passed, it will register itself with every function off the object

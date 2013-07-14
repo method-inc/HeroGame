@@ -5,5 +5,5 @@
     canvas.height = 400;
     holder.append(canvas);
 
-    game = new HeroGame.Game(canvas);
+    window.GameInstance = new HeroGame.Game(canvas);
 })($, window);
