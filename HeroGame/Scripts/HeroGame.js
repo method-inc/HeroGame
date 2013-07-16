@@ -6,12 +6,14 @@ var __extends = this.__extends || function (d, b) {
 };
 var HeroGame;
 (function (HeroGame) {
+    var paused;
     var Game = (function (_super) {
         __extends(Game, _super);
         function Game(canvas) {
             var _this = this;
             _super.call(this, canvas);
 
+            paused = true;
             this._shootEventHandler = new eg.EventHandler();
             this._shootEventHandler.Bind(function () {
                 return _this.Shoot();
@@ -34,9 +36,16 @@ var HeroGame;
             this.CollisionManager.OnCollision.Bind(function (first, second) {
                 return _this.GameOver(first, second);
             });
+
+            $("body").keypress(this.Pause);
         }
+        Game.prototype.Pause = function (event) {
+            if (event.which === 112)
+                paused = !paused;
+        };
+
         Game.prototype.Update = function (gameTime) {
-            if (!this._gameOver) {
+            if (!this._gameOver && !paused) {
                 this._bulletProvider.Update(gameTime);
                 this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);

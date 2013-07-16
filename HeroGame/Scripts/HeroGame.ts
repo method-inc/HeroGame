@@ -1,3 +1,4 @@
+/// <reference path="typings/jquery/jquery.d.ts" />
 /// <reference path="typings/endgate/endgate-0.1.0.d.ts" />
 /// <reference path="RockProvider.ts" />
 /// <reference path="CloudProvider.ts" />
@@ -6,6 +7,7 @@
 /// <reference path="Shield.ts" />
 
 module HeroGame {
+    var paused: boolean;
     export class Game extends eg.Game {
         private _monkey: Monkey;
         private _bulletProvider: BulletProvider;
@@ -19,6 +21,7 @@ module HeroGame {
         constructor(canvas: HTMLCanvasElement) {
             super(canvas);
 
+            paused = true;
             this._shootEventHandler = new eg.EventHandler();
             this._shootEventHandler.Bind(() => this.Shoot());
             this._shieldEventHandler = new eg.EventHandler();
@@ -35,10 +38,17 @@ module HeroGame {
             this.Scene.Add(this._ground);
             this.CollisionManager.Monitor(this._monkey);
             this.CollisionManager.OnCollision.Bind((first, second) => this.GameOver(first, second));
+
+            $("body").keypress(this.Pause);
+        }
+
+        public Pause(event): void {
+            if (event.which === 112)
+                paused = !paused;
         }
 
         public Update(gameTime: eg.GameTime): void {
-            if (!this._gameOver) {
+            if (!this._gameOver && !paused) {
                 this._bulletProvider.Update(gameTime);
                 this._monkey.Update(gameTime);
                 this._rockProvider.Update(gameTime);
